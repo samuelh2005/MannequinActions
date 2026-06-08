@@ -27,7 +27,7 @@ public class MannequinActions implements ModInitializer {
 		MannequinEvents.initialise();
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.OP_BLOCKS).register((output) -> {
 			output.accept(ModItems.MANNEQUIN_SPAWN_EGG);
-			output.accept(ModItems.MANNEQUIN_EDITOR);
+			output.accept(ModItems.MANNEQUIN_WAND);
 		});
 	}
 

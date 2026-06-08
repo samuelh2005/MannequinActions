@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import me.samuelh2005.mannequin_actions.interactions.EntityHandler;
 import me.samuelh2005.mannequin_actions.interactions.MannequinEvents.PlayerInteractEvent;
-import me.samuelh2005.mannequin_actions.items.MannequinEditorItem;
+import me.samuelh2005.mannequin_actions.items.MannequinWandItem;
 
 @Mixin(Entity.class)
 public class EntityMixin {
@@ -28,7 +28,7 @@ public class EntityMixin {
 		Entity entity = (Entity)(Object)this;
 		if (entity instanceof Mannequin mannequin) {
 			// Check if hand is holding the mannequin editor. If so, pass the event to the editor instead of emitting it to the mannequin's events.
-			if (player.getItemInHand(hand).getItem() instanceof MannequinEditorItem editor) {
+			if (player.getItemInHand(hand).getItem() instanceof MannequinWandItem editor) {
 				InteractionResult result = editor.onInteractMannequin(player, mannequin, hand, location);
 				if (result != InteractionResult.PASS) {
 					cir.setReturnValue(result);

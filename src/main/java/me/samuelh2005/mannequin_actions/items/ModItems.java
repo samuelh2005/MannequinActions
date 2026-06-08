@@ -14,7 +14,7 @@ import net.minecraft.world.item.Items;
 
 public class ModItems {
     public static final PolymerSpawnEggItem MANNEQUIN_SPAWN_EGG;
-    public static final MannequinEditorItem MANNEQUIN_EDITOR;
+    public static final MannequinWandItem MANNEQUIN_WAND;
 
 	public static <T extends Item> T register(String name, Function<Item.Properties, T> itemFactory, Item.Properties settings) {
 		// Create the item key.
@@ -31,7 +31,7 @@ public class ModItems {
 
     static {
         MANNEQUIN_SPAWN_EGG = register("mannequin_spawn_egg", (settings) -> new PolymerSpawnEggItem(Items.VILLAGER_SPAWN_EGG, settings), new Item.Properties().spawnEgg(EntityType.MANNEQUIN));
-        MANNEQUIN_EDITOR = register("mannequin_editor", MannequinEditorItem::new, new Item.Properties());
+        MANNEQUIN_WAND = register("mannequin_wand", MannequinWandItem::new, new Item.Properties());
     }
 
     public static void initialise() {

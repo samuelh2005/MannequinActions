@@ -9,8 +9,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 
-public class MannequinEditorItem extends SimplePolymerItem  {
-    public MannequinEditorItem(Properties settings) {
+public class MannequinWandItem extends SimplePolymerItem  {
+    public MannequinWandItem(Properties settings) {
         super(settings, Items.STICK);
     }
 
