@@ -1,9 +1,13 @@
 package me.samuelh2005.mannequin_actions;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import me.samuelh2005.mannequin_actions.interactions.EventRegistry;
+import me.samuelh2005.mannequin_actions.interactions.MannequinEvents;
 
 public class MannequinActions implements ModInitializer {
 	public static final String MOD_ID = "mannequin-actions";
@@ -15,10 +19,11 @@ public class MannequinActions implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		EventRegistry.initialise();
+		MannequinEvents.initialise();
+	}
 
-		LOGGER.info("Hello Fabric world!");
+	public static Identifier id(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 }
