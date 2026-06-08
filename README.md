@@ -8,4 +8,4 @@ For setup instructions, please see the [Fabric Documentation page](https://docs.
 
 ## License
 
-This project is licensed under the GNU Affero General Public License v3.0. See [LICENSE](LICENSE) for more details.
+This project is licensed under the GNU Lesser General Public License v3.0. See [LICENSE](LICENSE) for more details.
