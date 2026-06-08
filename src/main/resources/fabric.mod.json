@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "mannequin-actions",
+	"version": "${version}",
+	"name": "Mannequin Actions",
+	"description": "Bind actions to events for your Mannequin NPCs, create intractable stories and systems.",
+	"authors": [
+		"samuelh2005"
+	],
+	"contact": {
+		"homepage": "https://github.com/samuelh2005/MannequinActions",
+		"sources": "https://github.com/samuelh2005/MannequinActions",
+		"issues": "https://github.com/samuelh2005/MannequinActions/issues"
+	},
+	"license": "AGPL-3.0",
+	"icon": "assets/mannequin-actions/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.samuelh2005.mannequin_actions.MannequinActions"
+		],
+		"client": [
+			"me.samuelh2005.mannequin_actions.client.MannequinActionsClient"
+		]
+	},
+	"mixins": [
+		"mannequin-actions.mixins.json",
+		{
+			"config": "mannequin-actions.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
