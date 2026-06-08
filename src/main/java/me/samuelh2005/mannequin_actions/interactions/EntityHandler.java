@@ -4,25 +4,25 @@ import java.util.*;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.decoration.Mannequin;
 
 public class EntityHandler {
     public record EntityDefinition(
         Map<Identifier, Identifier> eventBindings
     ){}
 
-    private static final Map<Entity, EntityDefinition> bindings = new HashMap<>();
+    private static final Map<Mannequin, EntityDefinition> bindings = new HashMap<>();
 
-    public static <T extends Event> void bindEvents(EntityDefinition definitions, Entity entity) {
+    public static <T extends Event> void bindEvents(EntityDefinition definitions, Mannequin entity) {
         bindings.put(entity, definitions);
     }
 
-    public static void unbindEvents(Entity entity) {
+    public static void unbindEvents(Mannequin entity) {
         bindings.remove(entity);
     }
 
     @SuppressWarnings("unchecked")
-    public static <T extends Event> InteractionResult emit(Entity entity, T event) {
+    public static <T extends Event> InteractionResult emit(Mannequin entity, T event) {
         EntityDefinition definitions = bindings.get(entity);
         if (definitions == null) return InteractionResult.PASS;
 

@@ -3,7 +3,7 @@
 	"id": "mannequin-actions",
 	"version": "${version}",
 	"name": "Mannequin Actions",
-	"description": "Bind actions to events for your Mannequin NPCs, create intractable stories and systems.",
+	"description": "Bind actions to events for your Mannequin NPCs, create intractable stories and systems. Runs entirely server-side, so your players don't need to install anything. Polymer powered.",
 	"authors": [
 		"samuelh2005"
 	],
